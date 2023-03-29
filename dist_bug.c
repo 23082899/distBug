@@ -136,9 +136,13 @@ bool dist_bug(x, y){
 
                 double freeSpaceToGoal = lidar_values[angleToGoal];
 
-                if ((distance - freeSpaceToGoal) <= minimumDistance - STEP){
-                     break;
-                }
+                bool check = distance - freeSpaceToGoal <= minimumDistance - STEP;
+
+                LCDPrintf("distance(%i)-freeSpaceToGoal(%i)<=minimumDistance(%i)-STEP(%i),          Which is %b\n", round(distance), round(freeSpaceToGoal), minimumDistance, STEP, check);
+
+                // if (distance - freeSpaceToGoal <= minimumDistance - STEP){
+                //      break;
+                // }
 
 
 
