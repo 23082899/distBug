@@ -132,6 +132,9 @@ bool dist_bug(x, y){
                 if (angle > 180){
                     angle -= 360;
                 }
+                if (angle < 0){
+                    angle = abs(angle) + 180;
+                }
                 int angleToGoal = angle - currentAngle;
                 
                 
