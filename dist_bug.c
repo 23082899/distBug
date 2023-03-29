@@ -130,18 +130,22 @@ bool dist_bug(x, y){
                 }
 
                 int angleToGoal = angle - currentAngle;
+                printf("angleToGoal = %i\n", angleToGoal);
 
                 int lidar_values[360];
                 LIDARGet(lidar_values);
 
+                
+
                 double freeSpaceToGoal = lidar_values[angleToGoal];
 
 
-                printf("distance(%f)-freeSpaceToGoal(%f)<=minimumDistance(%f)-STEP(%i)\n", round(distance), round(freeSpaceToGoal), round(minimumDistance), STEP);
 
-                if (distance - freeSpaceToGoal <= minimumDistance - STEP){
-                      break;
-                }
+                //printf("distance(%f)-freeSpaceToGoal(%f)<=minimumDistance(%f)-STEP(%i)\n", round(distance), round(freeSpaceToGoal), round(minimumDistance), STEP);
+
+                //if (distance - freeSpaceToGoal <= minimumDistance - STEP){
+                //      break;
+                //}
 
 
 
