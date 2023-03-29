@@ -62,6 +62,8 @@ bool dist_bug(x, y){
                 // boundary following
                 // TODO: follow the boundary adjusting direction each time loop executes
                 // remember to make this non blocking
+                VWSetSpeed(100, 0);
+                
 
                 if (checkAtPoint(currentXPosition, currentYPosition, hitPoint[0], hitPoint[1])){
                     return false;
@@ -100,7 +102,7 @@ int main() {
     while (1){
         int key = KEYRead();
         if (key == KEY1){
-            printf("dist_bug(%i, %i);", GOAL_X, GOAL_Y);
+            LCDprintf("dist_bug(%i, %i);", GOAL_X, GOAL_Y);
             dist_bug(GOAL_X, GOAL_Y);
             break;
         } 
