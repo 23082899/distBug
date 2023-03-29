@@ -53,7 +53,7 @@ bool dist_bug(x, y){
         int angle = getRelativeGoalLocationAng(currentXPosition, currentYPosition, x, y);
         int angDif = angle - currentAngle;
         if (5<angDif || -5>angDif){
-             VWTurn(angle, 60);
+             VWTurn(angDif, 60);
              VWWait();
              VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
 
