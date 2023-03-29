@@ -82,7 +82,6 @@ bool dist_bug(x, y){
 
 
 
-            double distToRight = PSDGet(PSD_RIGHT);
             int count = 0;
 
 
