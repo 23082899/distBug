@@ -44,6 +44,7 @@ bool dist_bug(x, y){
 
         int currentXPosition, currentYPosition, currentAngle;
         VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
+        printf("curX: %i, curY: %i, curAngle: %i\n", currentXPosition, currentYPosition, currentAngle);
         
 
         if (checkAtPoint(currentXPosition, currentYPosition, x, y)){
@@ -75,7 +76,7 @@ bool dist_bug(x, y){
             double hitPoint[2] = {currentXPosition, currentYPosition};
 
             double minimumDistance = 999999999;
-            // bool leftHitPoint = False;
+            
 
             VWTurn(90, 60);
             VWWait();
@@ -140,7 +141,7 @@ bool dist_bug(x, y){
                 
 
                 
-                printf("angleToGoal = %i, LIDARVALUE = %i\n", angleToGoal, lidar_values[angleToGoal]);
+                //printf("angleToGoal = %i, LIDARVALUE = %i\n", angleToGoal, lidar_values[angleToGoal]);
                 double freeSpaceToGoal = lidar_values[angleToGoal];
 
 
