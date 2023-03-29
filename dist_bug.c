@@ -54,15 +54,32 @@ bool dist_bug(x, y){
             double minimumDistance = INFINITY;
             // bool leftHitPoint = False;
 
-            VWTurn(180, 60);
+            VWTurn(90, 60);
             VWWait();
+            double distToRight = PSDGet(PSD_RIGHT);
 
             while (true){
 
                 // boundary following
                 // TODO: follow the boundary adjusting direction each time loop executes
                 // remember to make this non blocking
+                
+                double distRight = PSDGet(PSD_RIGHT);
+                double dist = distRight- distToRight;
                 VWSetSpeed(100, 0);
+                if (-25>dist){
+                    VWSetSpeed(0, 0);
+                    VWTurn(-10, 60);
+                    VWWait();
+                    VWSetSpeed(100, 0);
+                }
+                if (25<dist){
+                    VWSetSpeed(0, 0);
+                    VWTurn(10, 60);
+                    VWWait();
+                    VWSetSpeed(100, 0);
+                }
+
                 
 
                 if (checkAtPoint(currentXPosition, currentYPosition, hitPoint[0], hitPoint[1])){
