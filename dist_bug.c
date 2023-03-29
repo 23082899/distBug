@@ -133,7 +133,7 @@ bool dist_bug(x, y){
                     angle -= 360;
                 }
                 
-                int angleToGoal = angle;
+                int angleToGoal = angle+currentAngle +90;
                 
                 
 
