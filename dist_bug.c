@@ -30,6 +30,16 @@ bool checkAtPoint(double x, double y, int goalX, int goalY){
 
 bool dist_bug(x, y){
     while (true){
+
+
+        int key = KEYRead();
+        if (key == KEY4){
+            VWSetSpeed(0, 0);
+            return false;
+        }
+
+
+
        
 
         int currentXPosition, currentYPosition, currentAngle;
@@ -72,6 +82,12 @@ bool dist_bug(x, y){
             double distToRight = PSDGet(PSD_RIGHT);
 
             while (true){
+
+                int key = KEYRead();
+                if (key == KEY4){
+                    VWSetSpeed(0, 0);
+                    return false;;
+                }
 
                 // boundary following
                 // TODO: follow the boundary adjusting direction each time loop executes
