@@ -6,11 +6,14 @@
 #define GOAL_Y 3000
 #define STEP 1000
 
-double getRelativeGoalLocation(int x, int y){
-    double distance = sqrt(x*x+y*y);
+double getRelativeGoalLocationAng(int x, int y){
     double rot = atan2(y, x) * 180/M_PI;
+    return rot;
+}
 
-    return distance, rot;
+double getRelativeGoalLocationDis(int x, int y){
+    double distance = sqrt(x*x+y*y);
+    return distance;
 }
 
 bool checkAtPoint(double x, double y, int goalX, int goalY){
@@ -28,7 +31,7 @@ bool dist_bug(x, y){
         // Drive towards goal
         // Get curremt position
 
-        double currentXPosition, currentYPosition, currentAngle;
+        int currentXPosition, currentYPosition, currentAngle;
         VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
 
         if (checkAtPoint(currentXPosition, currentYPosition, x, y)){
@@ -43,7 +46,7 @@ bool dist_bug(x, y){
         if (obstacleDetected){
             VWSetSpeed(0, 0);
 
-            double hitX, hitY, hitAngle;
+            int hitX, hitY, hitAngle;
             VWGetPosition(&hitX, &hitY, &hitAngle);
 
             double hitPoint[2] = {currentXPosition, currentYPosition};
@@ -64,7 +67,8 @@ bool dist_bug(x, y){
                     return false;
                 }
 
-                double distance, angle = getRelativeGoalLocation(x, y);
+                double distance = getRelativeGoalLocationDis(x, y);
+                double angle = getRelativeGoalLocationAng(x, y);
 
                 if (distance < minimumDistance){
                     minimumDistance = distance;
@@ -77,7 +81,7 @@ bool dist_bug(x, y){
 
                 double freeSpaceToGoal = lidar_values[angleToGoal];
 
-                if (distance = freeSpaceToGoal <= minimumDistance - STEP){
+                if ((distance = freeSpaceToGoal) <= minimumDistance - STEP){
                     break;
                 }
 
@@ -91,10 +95,7 @@ bool dist_bug(x, y){
 }
 
 int main() {
-    //resets robots location in simulator
-    SIMSetRobot(0, 500, 500, 0 , -90);
-    //Menu for task 1 and 2
-    LCDMenu("Task1", "", "", "Break");
+    LCDMenu("Play", "", "", "Break");
     while (1){
         int key = KEYRead();
         if (key == KEY1){
@@ -102,6 +103,7 @@ int main() {
             VWSetSpeed(0, 0);
             break;
         } 
+
 
         
         if (key == KEY4){
