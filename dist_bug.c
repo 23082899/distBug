@@ -77,13 +77,18 @@ bool dist_bug(x, y){
                 // TODO: follow the boundary adjusting direction each time loop executes
                 // remember to make this non blocking
                 
-                double distRight = PSDGet(PSD_RIGHT) > 150;
-                if (distRight){
+                double tooFar = PSDGet(PSD_RIGHT) > 150;
+                double tooClose = PSDGet(PSD_RIGHT) < 100;
+                if (tooFar){
                     VWTurn(-15, 45);
                     VWWait();
+                } else if(tooClose){
+                    VWTurn(15, 45);
+                    VWWait();
+
                 }
                 else{
-                    VWStraight(200, 50);
+                    VWStraight(100, 50);
                     VWWait();
                 }
                 
