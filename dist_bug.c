@@ -28,8 +28,7 @@ bool checkAtPoint(double x, double y, int goalX, int goalY){
 
 bool dist_bug(x, y){
     while (true){
-        // Drive towards goal
-        // Get curremt position
+       
 
         int currentXPosition, currentYPosition, currentAngle;
         VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
@@ -37,6 +36,7 @@ bool dist_bug(x, y){
         if (checkAtPoint(currentXPosition, currentYPosition, x, y)){
             return true;
         }
+        VWDrive(x, 0, 100);
 
         bool obstacleDetected = false;
         if (PSDGet(2)<100){
@@ -52,7 +52,7 @@ bool dist_bug(x, y){
             double hitPoint[2] = {currentXPosition, currentYPosition};
 
             double minimumDistance = INFINITY;
-            bool leftHitPoint = False;
+            // bool leftHitPoint = False;
 
             VWTurn(180, 60);
             VWWait();
