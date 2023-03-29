@@ -138,11 +138,11 @@ bool dist_bug(x, y){
 
 
 
-                //printf("distance(%f)-freeSpaceToGoal(%f)<=minimumDistance(%f)-STEP(%i)\n", round(distance), round(freeSpaceToGoal), round(minimumDistance), STEP);
+                printf("distance(%f)-freeSpaceToGoal(%f)<=minimumDistance(%f)-STEP(%i)\n", round(distance), round(freeSpaceToGoal), round(minimumDistance), STEP);
 
-                //if (distance - freeSpaceToGoal <= minimumDistance - STEP){
-                //      break;
-                //}
+                // if (distance - freeSpaceToGoal <= minimumDistance - STEP){
+                //       break;
+                // }
 
 
 
