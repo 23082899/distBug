@@ -103,7 +103,7 @@ int main() {
         if (key == KEY1){
             printf("dist_bug(%i, %i);", GOAL_X, GOAL_Y);
             //dist_bug(GOAL_X, GOAL_Y);
-            VWDrive(GOAL_X, 0, 100);
+            VWSetSpeed(100, 0);
             break;
         } 
 
