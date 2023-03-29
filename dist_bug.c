@@ -102,7 +102,8 @@ int main() {
         int key = KEYRead();
         if (key == KEY1){
             printf("dist_bug(%i, %i);", GOAL_X, GOAL_Y);
-            dist_bug(GOAL_X, GOAL_Y);
+            //dist_bug(GOAL_X, GOAL_Y);
+            VWDrive(GOAL_X, 0, 100);
             break;
         } 
 
