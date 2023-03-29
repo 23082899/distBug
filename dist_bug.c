@@ -6,13 +6,15 @@
 #define GOAL_Y 5500
 #define STEP 1000
 
-double getRelativeGoalLocationAng(int x, int y){
-    double rot = atan2(y, x) * 180/M_PI;
+double getRelativeGoalLocationAng(int curX, int curY, int x, int y){
+    double rot = atan2(y-curY, x-curX) * 180/M_PI;
     return rot;
 }
 
-double getRelativeGoalLocationDis(int x, int y){
-    double distance = sqrt(x*x+y*y);
+double getRelativeGoalLocationDis(int curX, int curY, int x, int y){
+    int nx = x - curX;
+    int ny = y - curY;
+    double distance = sqrt(nx*nx+ny*ny);
     return distance;
 }
 
@@ -36,18 +38,20 @@ bool dist_bug(x, y){
         if (checkAtPoint(currentXPosition, currentYPosition, x, y)){
             return true;
         }
+        VWTurn(getRelativeGoalLocationAng(currentXPosition, currentYPosition, x, y), 60);
+        VWWait();
         VWSetSpeed(100, 0);
 
         bool obstacleDetected = false;
-        if (PSDGet(2)<100){
+        if (PSDGet(PSD_FRONT)<100){
             obstacleDetected = true;
         }
 
         if (obstacleDetected){
             VWSetSpeed(0, 0);
 
-            int hitX, hitY, hitAngle;
-            VWGetPosition(&hitX, &hitY, &hitAngle);
+            
+            VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
 
             double hitPoint[2] = {currentXPosition, currentYPosition};
 
@@ -80,14 +84,15 @@ bool dist_bug(x, y){
                     VWSetSpeed(100, 0);
                 }
 
+                VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
                 
 
                 if (checkAtPoint(currentXPosition, currentYPosition, hitPoint[0], hitPoint[1])){
                     return false;
                 }
 
-                double distance = getRelativeGoalLocationDis(x, y);
-                double angle = getRelativeGoalLocationAng(x, y);
+                double distance = getRelativeGoalLocationDis(currentXPosition, currentYPosition, x, y);
+                double angle = getRelativeGoalLocationAng(currentXPosition, currentYPosition, x, y);
 
                 if (distance < minimumDistance){
                     minimumDistance = distance;
