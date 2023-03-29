@@ -96,12 +96,13 @@ bool dist_bug(x, y){
 }
 
 int main() {
+    SIMSetRobot(0, 500, 500, 0, 0);
     LCDMenu("Play", "", "", "Break");
     while (1){
         int key = KEYRead();
         if (key == KEY1){
+            printf("dist_bug(%i, %i);", GOAL_X, GOAL_Y);
             dist_bug(GOAL_X, GOAL_Y);
-            VWSetSpeed(0, 0);
             break;
         } 
 
