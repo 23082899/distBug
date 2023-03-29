@@ -121,10 +121,7 @@ bool dist_bug(x, y){
 
                 double distance = getRelativeGoalLocationDis(currentXPosition, currentYPosition, x, y);
                 double angle = getRelativeGoalLocationAng(currentXPosition, currentYPosition, x, y);
-                if (angle > 180){
-                    angle -= 360;
-                }
-
+                
                 if (distance < minimumDistance){
                     minimumDistance = distance;
                 }
