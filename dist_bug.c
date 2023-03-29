@@ -119,7 +119,7 @@ int main() {
     while (1){
         int key = KEYRead();
         if (key == KEY1){
-            LCDprintf("dist_bug(%i, %i);", GOAL_X, GOAL_Y);
+            LCDPrintf("dist_bug(%i, %i);", GOAL_X, GOAL_Y);
             dist_bug(GOAL_X, GOAL_Y);
             break;
         } 
