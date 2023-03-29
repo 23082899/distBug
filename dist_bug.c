@@ -36,8 +36,7 @@ bool dist_bug(x, y){
         if (checkAtPoint(currentXPosition, currentYPosition, x, y)){
             return true;
         }
-        VWDrive(x, 0, 100);
-        printf("does it make it this far");
+        VWSetSpeed(100, 0);
 
         bool obstacleDetected = false;
         if (PSDGet(2)<100){
@@ -102,8 +101,7 @@ int main() {
         int key = KEYRead();
         if (key == KEY1){
             printf("dist_bug(%i, %i);", GOAL_X, GOAL_Y);
-            //dist_bug(GOAL_X, GOAL_Y);
-            VWSetSpeed(100, 0);
+            dist_bug(GOAL_X, GOAL_Y);
             break;
         } 
 
