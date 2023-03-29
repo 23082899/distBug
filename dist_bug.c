@@ -126,7 +126,7 @@ bool dist_bug(x, y){
                     minimumDistance = distance;
                 }
 
-                int angleToGoal = angle;
+                int angleToGoal = angle - currentAngle;
                 
 
                 int lidar_values[360];
