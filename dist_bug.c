@@ -74,7 +74,7 @@ bool dist_bug(x, y){
 
             double hitPoint[2] = {currentXPosition, currentYPosition};
 
-            double minimumDistance = INFINITY;
+            double minimumDistance = 999999999;
             // bool leftHitPoint = False;
 
             VWTurn(90, 60);
@@ -136,9 +136,8 @@ bool dist_bug(x, y){
 
                 double freeSpaceToGoal = lidar_values[angleToGoal];
 
-                bool check = distance - freeSpaceToGoal <= minimumDistance - STEP;
 
-                printf("distance(%f)-freeSpaceToGoal(%f)<=minimumDistance(%i)-STEP(%i),          Which is %b\n", round(distance), round(freeSpaceToGoal), minimumDistance, STEP, check);
+                printf("distance(%f)-freeSpaceToGoal(%f)<=minimumDistance(%f)-STEP(%i)\n", round(distance), round(freeSpaceToGoal), round(minimumDistance), STEP);
 
                 // if (distance - freeSpaceToGoal <= minimumDistance - STEP){
                 //      break;
