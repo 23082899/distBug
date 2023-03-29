@@ -125,12 +125,15 @@ bool dist_bug(x, y){
                 if (distance < minimumDistance){
                     minimumDistance = distance;
                 }
+                
 
-                int angleToGoal = angle - currentAngle;
-
-                if (angleToGoal<0){
-                    angleToGoal += 360;
+                VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
+                if (angle > 180){
+                    angle -= 360;
                 }
+                int angleToGoal = angle - currentAngle;
+                angleToGoal += 180;
+                
                 
 
                 int lidar_values[360];
