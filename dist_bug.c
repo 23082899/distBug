@@ -34,13 +34,15 @@ bool dist_bug(x, y){
 
         int currentXPosition, currentYPosition, currentAngle;
         VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
+        
 
         if (checkAtPoint(currentXPosition, currentYPosition, x, y)){
             return true;
         }
 
         int angle = getRelativeGoalLocationAng(currentXPosition, currentYPosition, x, y);
-        printf("angle = %i\n", angle);
+        printf("angle = %i, currentAngle = %i\n", angle, currentAngle);
+
 
         // if (currentAngle != angle){
         //     VWTurn(angle, 60);
