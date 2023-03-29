@@ -38,8 +38,16 @@ bool dist_bug(x, y){
         if (checkAtPoint(currentXPosition, currentYPosition, x, y)){
             return true;
         }
-        VWTurn(getRelativeGoalLocationAng(currentXPosition, currentYPosition, x, y), 60);
-        VWWait();
+
+        //int angle = getRelativeGoalLocationAng(currentXPosition, currentYPosition, x, y);
+
+        // if (currentAngle != angle){
+        //     VWTurn(angle, 60);
+        //     VWWait();
+        //     VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
+
+        // } 
+        
         VWSetSpeed(100, 0);
 
         bool obstacleDetected = false;
