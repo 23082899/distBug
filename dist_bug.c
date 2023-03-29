@@ -83,7 +83,7 @@ bool dist_bug(x, y){
                     VWWait();
                 }
                 else{
-                    VWStraight(100, 50);
+                    VWStraight(400, 50);
                     VWWait();
                 }
                 
@@ -109,9 +109,9 @@ bool dist_bug(x, y){
 
                 double freeSpaceToGoal = lidar_values[angleToGoal];
 
-                if ((distance = freeSpaceToGoal) <= minimumDistance - STEP){
-                    break;
-                }
+                // if ((distance = freeSpaceToGoal) <= minimumDistance - STEP){
+                //     break;
+                // }
 
 
 
