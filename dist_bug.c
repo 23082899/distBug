@@ -96,9 +96,9 @@ bool dist_bug(x, y){
                 VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
                 
 
-                if (checkAtPoint(currentXPosition, currentYPosition, hitPoint[0], hitPoint[1])){
-                    return false;
-                }
+                // if (checkAtPoint(currentXPosition, currentYPosition, hitPoint[0], hitPoint[1])){
+                //     return false;
+                // }
 
                 double distance = getRelativeGoalLocationDis(currentXPosition, currentYPosition, x, y);
                 double angle = getRelativeGoalLocationAng(currentXPosition, currentYPosition, x, y);
