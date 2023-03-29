@@ -130,13 +130,13 @@ bool dist_bug(x, y){
                 }
 
                 int angleToGoal = angle - currentAngle;
-                printf("angleToGoal = %i\n", angleToGoal);
+                
 
                 int lidar_values[360];
                 LIDARGet(lidar_values);
 
                 
-
+                printf("angleToGoal = %i, LIDARVALUE = %i\n", angleToGoal, lidar_values[angleToGoal]);
                 double freeSpaceToGoal = lidar_values[angleToGoal];
 
 
