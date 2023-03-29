@@ -2,8 +2,8 @@
 #include "math.h"
 #include <stdio.h>
 
-#define GOAL_X 3000
-#define GOAL_Y 3000
+#define GOAL_X 5500
+#define GOAL_Y 5500
 #define STEP 1000
 
 double getRelativeGoalLocationAng(int x, int y){
