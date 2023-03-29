@@ -80,9 +80,11 @@ bool dist_bug(x, y){
                 double distRight = PSDGet(PSD_RIGHT) > 150;
                 if (distRight){
                     VWTurn(45, 45);
+                    VWWait();
                 }
                 else{
                     VWStraight(100, 50);
+                    VWWait();
                 }
                 
 
