@@ -37,6 +37,7 @@ bool dist_bug(x, y){
             return true;
         }
         VWDrive(x, 0, 100);
+        printf("does it make it this far");
 
         bool obstacleDetected = false;
         if (PSDGet(2)<100){
