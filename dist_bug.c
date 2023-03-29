@@ -83,7 +83,7 @@ bool dist_bug(x, y){
                     VWWait();
                 }
                 else{
-                    VWStraight(400, 50);
+                    VWStraight(200, 50);
                     VWWait();
                 }
                 
