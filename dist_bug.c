@@ -111,7 +111,8 @@ bool dist_bug(x, y){
                     VWWait();
                 }
                 
-
+                int lidar_values[360];
+                LIDARGet(lidar_values);
                 VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
                 
 
@@ -132,12 +133,10 @@ bool dist_bug(x, y){
                     angle -= 360;
                 }
                 int angleToGoal = angle - currentAngle;
-                angleToGoal += 180;
                 
                 
 
-                int lidar_values[360];
-                LIDARGet(lidar_values);
+                
 
                 
                 printf("angleToGoal = %i, LIDARVALUE = %i\n", angleToGoal, lidar_values[angleToGoal]);
