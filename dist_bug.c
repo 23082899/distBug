@@ -52,7 +52,7 @@ bool dist_bug(x, y){
         VWSetSpeed(100, 0);
 
         bool obstacleDetected = false;
-        if (PSDGet(PSD_FRONT)<100){
+        if (PSDGet(PSD_FRONT)<150){
             obstacleDetected = true;
         }
 
@@ -135,12 +135,14 @@ int main() {
         if (key == KEY1){
             LCDPrintf("dist_bug(%i, %i);", GOAL_X, GOAL_Y);
             dist_bug(GOAL_X, GOAL_Y);
+            VWSetSpeed(0, 0);
             break;
         } 
 
 
         
         if (key == KEY4){
+            VWSetSpeed(0, 0);
             break;
         }
 
