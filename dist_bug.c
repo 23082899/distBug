@@ -121,6 +121,9 @@ bool dist_bug(x, y){
 
                 double distance = getRelativeGoalLocationDis(currentXPosition, currentYPosition, x, y);
                 double angle = getRelativeGoalLocationAng(currentXPosition, currentYPosition, x, y);
+                if (angle > 180){
+                    angle -= 360;
+                }
 
                 if (distance < minimumDistance){
                     minimumDistance = distance;
@@ -133,9 +136,9 @@ bool dist_bug(x, y){
 
                 double freeSpaceToGoal = lidar_values[angleToGoal];
 
-                if ((distance = freeSpaceToGoal) <= minimumDistance - STEP){
-                     break;
-                }
+                //if ((distance = freeSpaceToGoal) <= minimumDistance - STEP){
+                //     break;
+                //}
 
 
 
