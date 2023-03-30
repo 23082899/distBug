@@ -2,9 +2,9 @@
 #include "math.h"
 #include <stdio.h>
 
-#define GOAL_X 3500
-#define GOAL_Y 3500
-#define STEP 1600
+#define GOAL_X 5500
+#define GOAL_Y 5500
+#define STEP 1500
 
 double getRelativeGoalLocationAng(int curX, int curY, int x, int y){
     double rot = atan2(y-curY, x-curX) * 180/M_PI;
@@ -21,7 +21,7 @@ double getRelativeGoalLocationDis(int curX, int curY, int x, int y){
 bool checkAtPoint(double x, double y, int goalX, int goalY){
     float nx = goalX-x;
     float ny = goalY-y;
-    if ((nx >=-100 && nx <= 100)&&(ny >=-100 && ny <= 100)){
+    if ((nx >=-75 && nx <= 75)&&(ny >=-75 && ny <= 75)){
         return true;
     } else{
         return false;
@@ -44,7 +44,7 @@ bool dist_bug(x, y){
 
         int currentXPosition, currentYPosition, currentAngle;
         VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
-        // printf("curX: %i, curY: %i, curAngle: %i\n", currentXPosition, currentYPosition, currentAngle);
+        printf("curX: %i, curY: %i, curAngle: %i\n", currentXPosition, currentYPosition, currentAngle);
         
 
         if (checkAtPoint(currentXPosition, currentYPosition, x-500, y-500)){
@@ -53,9 +53,7 @@ bool dist_bug(x, y){
 
         int angle = getRelativeGoalLocationAng(currentXPosition, currentYPosition, x, y);
         int angDif = angle - currentAngle;
-        printf("angDif = %i\n", angDif);
-        
-        if (2<angDif || -2>angDif){
+        if (5<angDif || -5>angDif){
              VWTurn(angDif, 60);
              VWWait();
              VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
@@ -132,12 +130,11 @@ bool dist_bug(x, y){
                 
 
                 VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
-                // if (angle > 180){
-                //     angle -= 360;
-                // }
+                if (angle > 180){
+                    angle -= 360;
+                }
                 
-                int angleToGoal = angle-currentAngle +315;
-                printf("angToGoal = %i\n", angleToGoal);
+                int angleToGoal = angle+currentAngle +90;
                 
                 
 
