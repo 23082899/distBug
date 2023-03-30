@@ -54,7 +54,8 @@ bool dist_bug(x, y){
         int angle = getRelativeGoalLocationAng(currentXPosition, currentYPosition, x, y);
         int angDif = angle - currentAngle;
 
-        bool inLine = 2<angDif || -2>angDif;
+        bool inLine = (2<angDif || -2>angDif);
+        printf("inLine = %B", inLine);
 
         while(!inLine){
             VWTurn(1, 5);
