@@ -1,5 +1,7 @@
 world obstacles4k.wld
 
+settings VIS TRACE
+
 marker  500  500    0 255 0
 marker 3500 3500  255   0 0
 
