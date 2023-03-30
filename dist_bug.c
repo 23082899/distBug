@@ -136,7 +136,7 @@ bool dist_bug(x, y){
                 //     angle -= 360;
                 // }
                 
-                int angleToGoal = angle-currentAngle +270;
+                int angleToGoal = angle-currentAngle +360;
                 printf("angToGoal = %i\n", angleToGoal);
                 
                 
