@@ -4,7 +4,7 @@
 
 #define GOAL_X 3500
 #define GOAL_Y 3500
-#define STEP 1000
+#define STEP 2000
 
 double getRelativeGoalLocationAng(int curX, int curY, int x, int y){
     double rot = atan2(y-curY, x-curX) * 180/M_PI;
