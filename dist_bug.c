@@ -132,11 +132,12 @@ bool dist_bug(x, y){
                 
 
                 VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
-                if (angle > 180){
-                    angle -= 360;
-                }
+                // if (angle > 180){
+                //     angle -= 360;
+                // }
                 
                 int angleToGoal = angle-currentAngle +90;
+                printf("angToGoal = %i\n", angleToGoal);
                 
                 
 
