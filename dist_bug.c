@@ -63,7 +63,7 @@ bool dist_bug(x, y){
         VWSetSpeed(200, 0);
 
         bool obstacleDetected = false;
-        if (PSDGet(PSD_FRONT)<100){
+        if (PSDGet(PSD_FRONT)<150){
             obstacleDetected = true;
         }
 
@@ -98,8 +98,8 @@ bool dist_bug(x, y){
                 // TODO: follow the boundary adjusting direction each time loop executes
                 // remember to make this non blocking
                 
-                double tooFar = PSDGet(PSD_RIGHT) > 150;
-                double tooClose = PSDGet(PSD_RIGHT) < 100;
+                double tooFar = PSDGet(PSD_RIGHT) > 200;
+                double tooClose = PSDGet(PSD_RIGHT) < 150;
                 if (tooFar){
                     VWTurn(-15, 45);
                     VWWait();
