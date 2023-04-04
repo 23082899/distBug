@@ -2,8 +2,8 @@
 #include "math.h"
 #include <stdio.h>
 
-#define GOAL_X 5500
-#define GOAL_Y 5500
+#define GOAL_X 1840
+#define GOAL_Y 3420
 #define STEP 1500
 
 double getRelativeGoalLocationAng(int curX, int curY, int x, int y){
@@ -21,7 +21,7 @@ double getRelativeGoalLocationDis(int curX, int curY, int x, int y){
 bool checkAtPoint(double x, double y, int goalX, int goalY){
     float nx = goalX-x;
     float ny = goalY-y;
-    if ((nx >=-200 && nx <= 200)&&(ny >=-200 && ny <= 200)){
+    if ((nx >=-75 && nx <= 75)&&(ny >=-75 && ny <= 75)){
         return true;
     } else{
         return false;
