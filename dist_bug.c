@@ -115,6 +115,10 @@ bool dist_bug(x, y){
                 int lidar_values[360];
                 LIDARGet(lidar_values);
                 VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
+
+                if (checkAtPoint(currentXPosition, currentYPosition, x-500, y-500)){
+                    return true;
+                }
                 
 
                 if (checkAtPoint(currentXPosition, currentYPosition, hitPoint[0], hitPoint[1]) && count > 50){
