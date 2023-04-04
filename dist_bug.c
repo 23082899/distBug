@@ -2,9 +2,9 @@
 #include "math.h"
 #include <stdio.h>
 
-#define GOAL_X 3500
-#define GOAL_Y 4700
-#define STEP 2000
+#define GOAL_X 5500
+#define GOAL_Y 5500
+#define STEP 1500
 
 double getRelativeGoalLocationAng(int curX, int curY, int x, int y){
     double rot = atan2(y-curY, x-curX) * 180/M_PI;
