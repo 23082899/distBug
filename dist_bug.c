@@ -116,7 +116,7 @@ bool dist_bug(x, y){
                 LIDARGet(lidar_values);
                 VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
 
-                if (checkAtPoint(currentXPosition, currentYPosition, x-500, y-500)){
+                if (checkAtPoint(currentXPosition, currentYPosition, x-500, y)){
                     return true;
                 }
                 
