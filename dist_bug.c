@@ -155,6 +155,7 @@ bool dist_bug(x, y){
 
                 if ((distance - freeSpaceToGoal) <= (minimumDistance - STEP)){
                     VWStraight(200, 100);
+                    VWWait();
                     break;
                 }
 
