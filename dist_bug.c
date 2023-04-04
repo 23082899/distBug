@@ -60,7 +60,7 @@ bool dist_bug(x, y){
 
         } 
         
-        VWSetSpeed(100, 0);
+        VWSetSpeed(200, 0);
 
         bool obstacleDetected = false;
         if (PSDGet(PSD_FRONT)<150){
@@ -108,7 +108,7 @@ bool dist_bug(x, y){
                     VWWait();
                 }
                 else{
-                    VWStraight(50, 50);
+                    VWStraight(50, 200);
                     VWWait();
                 }
                 
@@ -154,7 +154,7 @@ bool dist_bug(x, y){
                 //printf("distance(%f)-freeSpaceToGoal(%f)<=minimumDistance(%f)-STEP(%i)\n", round(distance), round(freeSpaceToGoal), round(minimumDistance), STEP);
 
                 if ((distance - freeSpaceToGoal) <= (minimumDistance - STEP)){
-                    VWStraight(200, 100);
+                    VWStraight(200, 200);
                     VWWait();
                     break;
                 }
