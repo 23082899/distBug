@@ -21,7 +21,7 @@ double getRelativeGoalLocationDis(int curX, int curY, int x, int y){
 bool checkAtPoint(double x, double y, int goalX, int goalY){
     float nx = goalX-x;
     float ny = goalY-y;
-    if ((nx >=-75 && nx <= 75)&&(ny >=-75 && ny <= 75)){
+    if ((nx >=-300 && nx <= 300)&&(ny >=-300 && ny <= 300)){
         return true;
     } else{
         return false;
@@ -121,7 +121,7 @@ bool dist_bug(x, y){
                 }
                 
 
-                if (checkAtPoint(currentXPosition, currentYPosition, hitPoint[0], hitPoint[1]) && count > 10){
+                if (checkAtPoint(currentXPosition, currentYPosition, hitPoint[0], hitPoint[1]) && count > 20){
                      return false;
                 }
 
