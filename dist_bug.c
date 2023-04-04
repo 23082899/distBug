@@ -21,7 +21,7 @@ double getRelativeGoalLocationDis(int curX, int curY, int x, int y){
 bool checkAtPoint(double x, double y, int goalX, int goalY){
     float nx = goalX-x;
     float ny = goalY-y;
-    if ((nx >=-400 && nx <= 400)&&(ny >=-300 && ny <= 300)){
+    if ((nx >=-400 && nx <= 400)&&(ny >=-400 && ny <= 400)){
         return true;
     } else{
         return false;
