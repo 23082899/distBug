@@ -21,7 +21,7 @@ double getRelativeGoalLocationDis(int curX, int curY, int x, int y){
 bool checkAtPoint(double x, double y, int goalX, int goalY){
     float nx = goalX-x;
     float ny = goalY-y;
-    if ((nx >=-75 && nx <= 75)&&(ny >=-75 && ny <= 75)){
+    if ((nx >=-100 && nx <= 100)&&(ny >=-100 && ny <= 100)){
         return true;
     } else{
         return false;
@@ -47,7 +47,7 @@ bool dist_bug(x, y){
         printf("curX: %i, curY: %i, curAngle: %i\n", currentXPosition, currentYPosition, currentAngle);
         
 
-        if (checkAtPoint(currentXPosition, currentYPosition, x-700, y-700)){
+        if (checkAtPoint(currentXPosition, currentYPosition, x-500, y-500)){
             return true;
         }
 
