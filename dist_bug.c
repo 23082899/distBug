@@ -156,12 +156,18 @@ bool dist_bug(x, y){
 
 
                 //printf("distance(%f)-freeSpaceToGoal(%f)<=minimumDistance(%f)-STEP(%i)\n", round(distance), round(freeSpaceToGoal), round(minimumDistance), STEP);
+                int nx = currentXPosition-x;
+                int ny = currentYPosition-y;
 
-                if ((distance - freeSpaceToGoal) <= (minimumDistance - STEP)){
+                if (nx < 0 && ny < 0){
+                    if ((distance - freeSpaceToGoal) <= (minimumDistance - STEP)){
                     VWStraight(400, 200);
                     VWWait();
                     break;
                 }
+
+                }
+                
 
 
 
