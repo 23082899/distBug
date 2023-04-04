@@ -159,12 +159,13 @@ bool dist_bug(x, y){
                 int nx = currentXPosition-x;
                 int ny = currentYPosition-y;
 
-                if (nx < 0 && ny < 0){
-                    if ((distance - freeSpaceToGoal) <= (minimumDistance - STEP)){
+                //if (nx < 0 && ny < 0){
+                    
+                //}
+                if ((distance - freeSpaceToGoal) <= (minimumDistance - STEP)){
                     VWStraight(400, 200);
                     VWWait();
                     break;
-                }
 
                 }
                 
