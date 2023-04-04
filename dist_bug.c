@@ -127,14 +127,19 @@ bool dist_bug(x, y){
                 if (distance < minimumDistance){
                     minimumDistance = distance;
                 }
-                
+                //angle = 180 + phi - req_angle
+                //  if (angle <0){
+                    //angle += 360;
+                //}
+
+                //freespace = dists[angle]
 
                 VWGetPosition(&currentXPosition, &currentYPosition, &currentAngle);
-                if (angle > 180){
-                    angle -= 360;
+                int angleToGoal = 180 + currentAngle - angle;
+                if (angleToGoal < 0){
+                    angleToGoal = 360;
                 }
                 
-                int angleToGoal = angle+currentAngle +90;
                 
                 
 
