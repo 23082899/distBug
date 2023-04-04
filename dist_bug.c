@@ -47,7 +47,7 @@ bool dist_bug(x, y){
         printf("curX: %i, curY: %i, curAngle: %i\n", currentXPosition, currentYPosition, currentAngle);
         
 
-        if (checkAtPoint(currentXPosition, currentYPosition, x-500, y-500)){
+        if (checkAtPoint(currentXPosition, currentYPosition, x-700, y-700)){
             return true;
         }
 
