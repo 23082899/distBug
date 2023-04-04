@@ -2,8 +2,8 @@
 #include "math.h"
 #include <stdio.h>
 
-#define GOAL_X 1840
-#define GOAL_Y 3420
+#define GOAL_X 3500
+#define GOAL_Y 3500
 #define STEP 1500
 
 double getRelativeGoalLocationAng(int curX, int curY, int x, int y){
@@ -157,11 +157,11 @@ bool dist_bug(x, y){
 
                 //printf("distance(%f)-freeSpaceToGoal(%f)<=minimumDistance(%f)-STEP(%i)\n", round(distance), round(freeSpaceToGoal), round(minimumDistance), STEP);
 
-                if ((distance - freeSpaceToGoal) <= (minimumDistance - STEP)){
-                    VWStraight(400, 200);
-                    VWWait();
-                    break;
-                }
+                // if ((distance - freeSpaceToGoal) <= (minimumDistance - STEP)){
+                //     VWStraight(400, 200);
+                //     VWWait();
+                //     break;
+                // }
 
 
 
